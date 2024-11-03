@@ -21,3 +21,18 @@ errorMessage.textContent = 'Failure loading products. Try again in a few minutes
 console.error('Fetch error:', error); //Logs error to console for debugging with details about what went wrong
     });
 });
+
+//Task 3: Display Product Details Dynamically
+function displayProducts(products) { //function to display product details
+    const productContainer = document.getElementById('productContainer'); //selects container where products are displayed
+    products.forEach(product => {
+        const productElement = document.createElement('div'); //creates new div element for each product
+        productElement.innerHTML = `
+            <img src="${product.fields.image[0].url}" alt="${product.fields.name}">
+            <h2>${product.fields.name}</h2>
+            <p>Price: ${product.fields.price/100}</p>
+            <p>Company: $${product.fields.company}</p>
+        `; //Sets inner HTML of product element with product details.
+        productContainer.appendChild(productElement); //Appends product element to product container
+    });
+} 
