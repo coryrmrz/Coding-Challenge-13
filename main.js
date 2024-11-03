@@ -16,3 +16,8 @@ document.addEventListener('DOMContentLoaded', () => { //Waits fro HTML to be ful
     
             displayProducts(data); //displays fetch product data
         }).catch(error => { //catches errors in fetched product data
+// Task 4: Handle Errors 
+errorMessage.textContent = 'Failure loading products. Try again in a few minutes.'; //Error message informs user about loading issue
+console.error('Fetch error:', error); //Logs error to console for debugging with details about what went wrong
+    });
+});
